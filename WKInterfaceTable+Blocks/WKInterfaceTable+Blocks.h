@@ -10,9 +10,9 @@
 
 @interface WKInterfaceTable (Blocks)
 
-- (void)addRowWithType:(NSString *)rowType withConfigurationHandler:(void (^)(id rowController))configurationHandler;
-- (void)addRowsWithType:(NSString *)rowType numberOfRows:(NSUInteger)numberOfRows withConfigurationHandler:(void (^)(id rowController, NSUInteger index))configurationHandler;
-- (void)addRowsWithType:(NSString *)rowType objects:(NSArray *)objects withConfigurationHandler:(void (^)(id rowController, id object))configurationHandler;
+- (void)addRowWithType:(NSString *)rowType configurationHandler:(void (^)(id rowController))configurationHandler;
+- (void)addRowsWithType:(NSString *)rowType numberOfRows:(NSUInteger)numberOfRows configurationHandler:(void (^)(id rowController, NSUInteger index))configurationHandler;
+- (void)addRowsWithType:(NSString *)rowType objects:(NSArray *)objects configurationHandler:(void (^)(id rowController, id object))configurationHandler;
 
 - (void)removeAllRows;
 

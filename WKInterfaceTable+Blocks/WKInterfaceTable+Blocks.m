@@ -10,7 +10,7 @@
 
 @implementation WKInterfaceTable (Blocks)
 
-- (void)addRowWithType:(NSString *)rowType withConfigurationHandler:(void (^)(id rowController))configurationHandler
+- (void)addRowWithType:(NSString *)rowType configurationHandler:(void (^)(id rowController))configurationHandler
 {
     [self insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.numberOfRows] withRowType:rowType];
     id rowController = [self rowControllerAtIndex:self.numberOfRows-1];
@@ -20,7 +20,7 @@
 }
 
 
-- (void)addRowsWithType:(NSString *)rowType numberOfRows:(NSUInteger)numberOfRows withConfigurationHandler:(void (^)(id rowController, NSUInteger index))configurationHandler
+- (void)addRowsWithType:(NSString *)rowType numberOfRows:(NSUInteger)numberOfRows configurationHandler:(void (^)(id rowController, NSUInteger index))configurationHandler
 {
     NSUInteger currentNumberOfRows = self.numberOfRows;
     [self insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(currentNumberOfRows, numberOfRows)] withRowType:rowType];
@@ -33,7 +33,7 @@
 }
 
 
-- (void)addRowsWithType:(NSString *)rowType objects:(NSArray *)objects withConfigurationHandler:(void (^)(id rowController, id object))configurationHandler
+- (void)addRowsWithType:(NSString *)rowType objects:(NSArray *)objects configurationHandler:(void (^)(id rowController, id object))configurationHandler
 {
     NSUInteger currentNumberOfRows = self.numberOfRows;
     [self insertRowsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(currentNumberOfRows, objects.count)] withRowType:rowType];
