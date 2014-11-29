@@ -8,7 +8,7 @@ Adds a block-based API to WKInterfaceTable
 [self.table removeAllRows];
 
 NSArray *content = @[@"Foo", @"Bar"];
-[self.table addRowsWithType:@"MyRow" objects:content configurationHandler:^(DeviceRow *rowController, id object) {
+[self.table addRowsWithType:@"MyRow" objects:content configurationHandler:^(id rowController, id object) {
 	// Configure Row Controller
 	rowController.title = object;
 }];
