@@ -5,7 +5,7 @@ Adds a block-based API to WKInterfaceTable
 
 ```objective-c
 
-[self.deviceTable removeAllRows];
+[self.table removeAllRows];
 
 NSArray *content = @[@"Foo", @"Bar"];
 [self.table addRowsWithType:@"MyRow" objects:content configurationHandler:^(DeviceRow *rowController, id object) {
